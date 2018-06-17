@@ -1,0 +1,16 @@
+var time = 0,
+ stop = false;
+bot.on('message', message =>{
+if(message.content == "-start"){
+  stop=false
+setInterval(()=>{
+  if(stop === true) return;
+time++;
+},1000*1);
+  
+}
+  if(message.content == "-stop"){
+    stop = true
+message.reply("  "+time).then(()=> time=0)
+}
+});
